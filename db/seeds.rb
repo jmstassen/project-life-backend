@@ -10,3 +10,6 @@
 scheduling = Project.create(title: "Scheduling")
 home = Project.create(title: "Home")
 routines = Project.create(title: "Routines")
+
+Task.create(name: "Dentist", date: 2021-09-20, size: 3, status: "waiting", project_id: routines.id)
+Task.create(name: "Vaccume", date: 2021-08-29, size: 5, status: "active", project_id: home.id)
