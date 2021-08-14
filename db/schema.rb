@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_201547) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "project_id"
+    t.bigint "project_id", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
