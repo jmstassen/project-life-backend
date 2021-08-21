@@ -6,9 +6,11 @@ class Api::V1::TasksController < ApplicationController
   end    
 
   def create
-    task = Task.new(task_params)
-    if task.save
-      render json: task, status: :accepted
+    @task = Task.new(task_params)
+    options = {}
+    options[:is_collection] = false
+    if @task.save
+      render json: TaskSerializer.new(@task, options), status: :accepted
     else
       render json: { errors: task.errors.full_messages }, status: :unprocessable_entity
     end
