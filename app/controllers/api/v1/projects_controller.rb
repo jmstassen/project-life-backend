@@ -6,12 +6,29 @@ class Api::V1::ProjectsController < ApplicationController
   end    
     
   def create
-    project = Project.new(project_params)
-    if project.save
-      render json: project, status: :accepted
+    @project = Project.new(project_params)
+    if @project.save
+      render json: ProjectSerializer.new(@project), status: :accepted
     else
-      render json: { errors: project.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: @project.errors.full_messages }, status: :unprocessable_entity
     end
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    @project.update(project_params)
+    if @project.save
+      render json: ProjectSerializer.new(@project, options), status: :accepted
+    else
+      render json: { errors: @project.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.delete
+
+    render json: {projectId: @project.id}
   end
     
   private
