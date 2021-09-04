@@ -18,7 +18,7 @@ class Api::V1::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.update(project_params)
     if @project.save
-      render json: ProjectSerializer.new(@project, options), status: :accepted
+      render json: ProjectSerializer.new(@project), status: :accepted
     else
       render json: { errors: @project.errors.full_messages }, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.delete
+    @project.destroy
 
     render json: {projectId: @project.id}
   end
