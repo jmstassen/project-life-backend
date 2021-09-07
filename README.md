@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a task manager app that has different project cards where you can list different tasks. Add or delete projects or tasks, or edit the content of either.
+Tasks can have a status of active, do now, waiting, or done, and there is also an ability to snooze a task so it reappears tomorrow.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
