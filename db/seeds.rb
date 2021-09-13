@@ -27,3 +27,4 @@ Task.create(name: "Pay phone bill", date: "2021-08-30", size: 3, status: "do now
 Task.create(name: "Meditate", date: "2021-08-30", size: 1, status: "active", project_id: goals.id)
 Task.create(name: "No soda", date: "2021-08-30", size: 1, status: "active", project_id: goals.id)
 Task.create(name: "Jog", date: "2021-08-30", size: 1, status: "active", project_id: goals.id)
+Task.create(name: "Coding", date: "2021-08-30", size: 1, status: "active", project_id: goals.id)
